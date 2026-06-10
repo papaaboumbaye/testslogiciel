@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class StatistiqueImpl implements Statistique{
 
-    List<Voiture> voitures = new ArrayList<Voiture>();
+    public List<Voiture> voitures = new ArrayList<Voiture>();
 
     @Override
     public void ajouter(Voiture voiture) {
