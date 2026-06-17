@@ -1,7 +1,9 @@
 name: CI
 on:
-  # Le script se lance sur un pull request
-  - pull_request
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
   job1:
     # Sur un machine chez Github sur laquelle on demande l'installation d'ubuntu via Docker
