@@ -54,4 +54,15 @@ class WebTests {
         verify(statistiqueImpl, times(1)).prixMoyen();
     }
 
+    @Test
+    void testGetStatistiquesSansVoiture() throws Exception {
+        when(statistiqueImpl.prixMoyen()).thenThrow(new ArithmeticException());
+
+        mockMvc.perform(get("/statistique")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest());
+
+        verify(statistiqueImpl, times(1)).prixMoyen();
+    }
+
 }
